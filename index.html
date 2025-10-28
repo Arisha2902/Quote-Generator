@@ -1,25 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>labbo</title>
-  <link rel="stylesheet" href="quote.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspirational Quote Generator</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
 </head>
-<body>
-  <div class="container">
-    <div id="main">
-    <h2>Quote of Day</h2>
-    <div class="quote">
-    <blockquote>Loading...</blockquote>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <!-- Quote Container -->
+    <div id="quote-box" class="max-w-xl w-full bg-white shadow-2xl rounded-2xl p-8 md:p-12 text-center transition-all duration-300 transform hover:scale-[1.01] border-t-4 border-indigo-600">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+            </svg>
+            Quote of the Day
+        </h2>
+        
+        <div class="quote mb-8">
+            <blockquote id="quote-text" class="text-xl md:text-2xl italic text-gray-700 leading-relaxed font-medium">
+                Loading a great quote...
+            </blockquote>
+        </div>
+
+        <span id="author" class="block text-lg font-semibold text-indigo-600">
+            — Loading Author
+        </span>
+
+        <hr class="my-8 border-t border-gray-200">
+
+        <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+            <!-- New Quote Button -->
+            <button id="btn-new-quote" class="flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out transform hover:scale-[1.05]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.564 1 1 0 11-1.885.656A5.002 5.002 0 005.41 7H7a1 1 0 010 2H3a1 1 0 01-1-1V4a1 1 0 011-1zM16 17a1 1 0 01-1-1v-2.101a7.002 7.002 0 01-11.601-2.564 1 1 0 011.885-.656A5.002 5.002 0 0014.59 13H13a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-1 1z" clip-rule="evenodd" />
+                </svg>
+                New Quote
+            </button>
+            
+            <!-- Tweet Button -->
+            <button id="btn-tweet" class="flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 transition duration-150 ease-in-out transform hover:scale-[1.05]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.23-8.26L2.542 2.25H8.08L12 7.519L18.244 2.25zM17.848 19.42H19.64L8.528 4.22H6.532L17.848 19.42z"/>
+                </svg>
+                Tweet
+            </button>
+        </div>
+        
+        <div id="message-box" class="mt-4 p-2 text-sm text-center bg-yellow-100 text-yellow-800 rounded-lg hidden" role="alert"></div>
     </div>
-    <span id="author">Loading...</span>
-    </div>
-    <div>
-      <button id="btn1">New Quote</button>
-      <button style="margin-left:40px ;">?Tweet</button>
-    </div>
-  </div>
-  <script src="quote.js"></script>
+
+    
+    <!-- JavaScript Logic -->
+     <script src="index.js"></script>
+   
 </body>
 </html>
