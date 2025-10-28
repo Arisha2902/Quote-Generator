@@ -23,10 +23,13 @@ async function getQuote(url) {
     }
 
     getQuote(api_url);
-    btn.addEventListener("click", function() {
-      preventDefault();
-        getQuote(api_url);
-    });
+btn.addEventListener("click", function() {
+  getQuote(api_url);
+});
+    // btn.addEventListener("click", function() {
+    //   preventDefault();
+    //     getQuote(api_url);
+    // });
 
 
 
